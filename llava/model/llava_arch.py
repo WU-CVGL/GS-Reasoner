@@ -92,7 +92,7 @@ class LlavaMetaModel:
 
     def initialize_spatial_encoder(self, dtype, device):
         print("initialize sonata spatial encoder!")
-        spatial_encoder = sonata.load("data/models/sonata/sonata_wo_normal.pth", repo_id="facebook/sonata")
+        spatial_encoder = sonata.load("data/models/sonata-wo-normal/sonata_wo_normal.pth", repo_id="facebook/sonata")
         # point transformer do not support bf16
         spatial_encoder.to(dtype=torch.float32 ,device=device)
         self.spatial_encoder = spatial_encoder
