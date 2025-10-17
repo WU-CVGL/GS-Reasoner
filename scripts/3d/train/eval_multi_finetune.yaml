@@ -1,0 +1,4 @@
+datasets:
+  # place holder
+  - json_path: data/GS-Reasoner-Data/3d_visual_grounding/scanrefer_subval_llava_style.json
+    sampling_strategy: "all"

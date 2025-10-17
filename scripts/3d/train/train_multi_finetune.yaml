@@ -1,0 +1,32 @@
+datasets:
+  # finetune
+  # 3dvg + general 3D task
+  - json_path: data/GS-Reasoner-Data/3d_visual_grounding/scanrefer_train_llava_style.json
+    sampling_strategy: "end:10%"
+  - json_path: data/GS-Reasoner-Data/3d_visual_grounding/multi3drefer_train_llava_style.json
+    sampling_strategy: "end:10%"
+  - json_path: data/GS-Reasoner-Data/3d_visual_grounding/sr3d_train_llava_style.json
+    sampling_strategy: "end:10%"
+  - json_path: data/GS-Reasoner-Data/3d_visual_grounding/nr3d_train_llava_style.json
+    sampling_strategy: "end:10%"
+  - json_path: data/GS-Reasoner-Data/3d_visual_grounding/locate3d_scannet_train_llava_style.json
+    sampling_strategy: "end:10%"
+  - json_path: data/GS-Reasoner-Data/general_3d_tasks/scan2cap_train_llava_style.json
+    sampling_strategy: "all"
+  - json_path: data/GS-Reasoner-Data/general_3d_tasks/scanqa_train_llava_style.json
+    sampling_strategy: "all"
+  - json_path: data/GS-Reasoner-Data/general_3d_tasks/sqa3d_train_llava_style.json
+    sampling_strategy: "all"
+
+  # vsibench task
+  - json_path: data/GS-Reasoner-Data/gcot/gcot_scannet_train.json
+    sampling_strategy: "all"
+  - json_path: data/GS-Reasoner-Data/gcot/gcot_scannetpp_train.json
+    sampling_strategy: "all"
+
+  - json_path: data/GS-Reasoner-Data/gcot/gcot_room_size_estimation_train.json
+    sampling_strategy: "all"
+  - json_path: data/GS-Reasoner-Data/gcot/gcot_appear_order_train.json
+    sampling_strategy: "all"
+  - json_path: data/GS-Reasoner-Data/gcot/gcot_route_plan_train.json
+    sampling_strategy: "all"

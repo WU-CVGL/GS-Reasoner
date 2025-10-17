@@ -1,0 +1,23 @@
+CONTROLLER_HEART_BEAT_EXPIRATION = 30
+WORKER_HEART_BEAT_INTERVAL = 15
+
+LOGDIR = "."
+
+# Model Constants
+IGNORE_INDEX = -100
+IMAGE_TOKEN_INDEX = -200
+DEFAULT_IMAGE_TOKEN = "<image>"
+DEFAULT_IMAGE_PATCH_TOKEN = "<im_patch>"
+DEFAULT_IM_START_TOKEN = "<im_start>"
+DEFAULT_IM_END_TOKEN = "<im_end>"
+
+GROUND_TOKEN = "<ground>"
+
+BBOX_START_TOKEN = "<bbox>"
+BBOX_END_TOKEN = "</bbox>"
+THINK_START_TOKEN = "<think>"
+THINK_END_TOKEN = "</think>"
+ANSWER_START_TOKEN = "<answer>"
+ANSWER_END_TOKEN = "</answer>"
+BBOX_LST_START_TOKEN = "<bbox_lst>"
+BBOX_LST_END_TOKEN = "</bbox_lst>"
