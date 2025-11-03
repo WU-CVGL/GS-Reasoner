@@ -252,7 +252,7 @@ def export_scene_sampled_frames(sens_file_path, output_base_dir, num_frames_to_s
                 color_export_failed_critically = False
 
                 # Export Pose
-                if hasattr(frame, 'camera_to_world') and frame.camera_to_world is not None:
+                if hasattr(frame, 'camera_to_world') and frame.camera_to_world is not None and np.isnan(frame.camera_to_world).sum() == 0 and np.isinf(frame.camera_to_world).sum() == 0:
                     pose_matrix_original = frame.camera_to_world
                     pose_filename = os.path.join(pose_output_dir, f'{original_idx:06d}.txt')
                     if axis_align_matrix is not None:
@@ -272,7 +272,10 @@ def export_scene_sampled_frames(sens_file_path, output_base_dir, num_frames_to_s
                         pose_saved_path = pose_filename
                 else:
                     print(f"Warning: Pose data not found for pre-validated frame {original_idx} during export. Skip pose comp.")
-                    components_skipped_this_frame_export += 1
+                    total_skipped_components_in_export += 4 
+                    processed_attempt_count += 1
+                    continue
+                    # components_skipped_this_frame_export += 1
 
                 # Export Depth
                 if hasattr(frame, 'decompress_depth') and hasattr(sd, 'depth_compression_type') and sd.depth_compression_type.lower() != 'unknown':
